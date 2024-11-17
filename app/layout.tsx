@@ -9,6 +9,7 @@ import "./globals.css";
 import React from "react";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "My Next.js App",
@@ -54,7 +55,8 @@ export default function RootLayout({
               <UserButton />
             </SignedIn>
           </header>
-          <main>{children}</main>
+
+          <ThemeProvider>{children}</ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
